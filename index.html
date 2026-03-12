@@ -249,7 +249,7 @@ button{font-family:'Jost',sans-serif;cursor:pointer;}
    HERO — DUAL PATH
 ══════════════════════════════════════════ */
 .hero{height:100vh;min-height:620px;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
-.hero-side{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:64px 52px;overflow:hidden;transition:flex .6s cubic-bezier(.4,0,.2,1);cursor:pointer;}
+.hero-side{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:64px 52px 130px;overflow:hidden;transition:flex .6s cubic-bezier(.4,0,.2,1);cursor:pointer;}
 .hero:hover .hero-side{flex:.85;}
 .hero:hover .hero-side:hover{flex:1.15;}
 
@@ -295,12 +295,15 @@ button{font-family:'Jost',sans-serif;cursor:pointer;}
 .hstat-n{font-family:'Playfair Display',serif;font-size:clamp(22px,2.5vw,32px);color:var(--gold-inv);line-height:1;margin-bottom:4px;}
 .hstat-l{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:rgba(245,240,232,.42);}
 
-/* hero animations */
-.hero-badge{opacity:0;animation:fadeUp .7s .25s forwards;}
-.hero-title{opacity:0;animation:fadeUp .7s .4s forwards;}
-.hero-sub{opacity:0;animation:fadeUp .7s .55s forwards;}
-.hero-btns{opacity:0;animation:fadeUp .7s .7s forwards;}
-.hero-stats{opacity:0;animation:fadeIn .7s .85s forwards;}
+/* hero animations — both resolves to visible */
+.hero-badge{opacity:0;animation:fadeUp .65s .2s both;}
+.hero-title{opacity:0;animation:fadeUp .65s .35s both;}
+.hero-sub{opacity:0;animation:fadeUp .65s .5s both;}
+.hero-btns{opacity:0;animation:fadeUp .65s .62s both;}
+.hero-stats{opacity:0;animation:fadeIn .65s .75s both;}
+@media (prefers-reduced-motion: reduce){
+  .hero-badge,.hero-title,.hero-sub,.hero-btns,.hero-stats{opacity:1;animation:none;}
+}
 
 /* ══════════════════════════════════════════
    BEFORE / AFTER SLIDER
@@ -1179,7 +1182,7 @@ body.en [data-en]{display:revert;}
       </p>
       <div>
         <div class="cinfo-row"><div class="cinfo-ic">✆</div><div><div class="cinfo-lbl"><span data-pl>Telefon</span><span data-en>Phone</span></div><div class="cinfo-val">+48 535 033 499</div></div></div>
-        <div class="cinfo-row"><div class="cinfo-ic">@</div><div><div class="cinfo-lbl">Email</div><div class="cinfo-val">biuro@innov-8.pl</div></div></div>
+        <div class="cinfo-row"><div class="cinfo-ic">@</div><div><div class="cinfo-lbl">Email</div><div class="cinfo-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fb99928e8994bb929595948dd6c3d58b97">[email&#160;protected]</a></div></div></div>
         <div class="cinfo-row"><div class="cinfo-ic">⌖</div><div><div class="cinfo-lbl"><span data-pl>Biuro</span><span data-en>Office</span></div><div class="cinfo-val">ul. Rzymowskiego 30, lok. 424<br>02-697 Warszawa</div></div></div>
         <div class="cinfo-row"><div class="cinfo-ic">◷</div><div><div class="cinfo-lbl"><span data-pl>Godziny</span><span data-en>Hours</span></div><div class="cinfo-val"><span data-pl>Pon–Pt: 9:00–18:00</span><span data-en>Mon–Fri: 9:00–18:00</span></div></div></div>
       </div>
@@ -1281,7 +1284,7 @@ body.en [data-en]{display:revert;}
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ══════════════════════════════════
    EMAILJS — INIT
    ZAMIEŃ 'YOUR_PUBLIC_KEY' na klucz z konta EmailJS
@@ -1615,8 +1618,4 @@ function qsend(t){document.getElementById('cinput').value=t;sendMsg();}
    COOKIE CONSENT
 ══════════════════════════════════ */
 function acceptCookies(){document.getElementById('cookie-bar').style.display='none';localStorage.setItem('i8-cookies','accepted');}
-function rejectCookies(){document.getElementById('cookie-bar').style.display='none';localStorage.setItem('i8-cookies','rejected');}
-(function(){if(localStorage.getItem('i8-cookies'))document.getElementById('cookie-bar').style.display='none';})();
-</script>
-</body>
-</html>
+function rejectCookies(){document.getElementBy
