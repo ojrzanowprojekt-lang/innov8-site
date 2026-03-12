@@ -3,20 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Sabały 52 — Mieszkania na Sprzedaż Warszawa Włochy | Innov8 Development</title>
 <meta name="description" content="Sabały 52 — kameralna inwestycja mieszkaniowa w Warszawie Włochy. 17 lokali od 14,65 do 35,05 m², ceny od 291 535 zł. Odbiory Q2 2026. Sprawdź dostępne lokale.">
 <meta name="keywords" content="Sabały 52 mieszkania, mieszkania Warszawa Włochy, nowe mieszkania Warszawa, Innov8 Development, kamienica Włochy, mieszkania na sprzedaż Włochy Warszawa">
 <link rel="canonical" href="https://innov-8.pl/sabaly-52">
 <link rel="alternate" hreflang="pl" href="https://innov-8.pl/sabaly-52">
 <link rel="alternate" hreflang="en" href="https://innov-8.pl/sabaly-52-en">
-
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://innov-8.pl/sabaly-52">
 <meta property="og:title" content="Sabały 52 — Mieszkania Warszawa Włochy | od 291 535 zł">
 <meta property="og:description" content="17 lokali w kameralnej kamienicy na warszawskich Włochach. Odbiory Q2/Q3 2026. Ceny od 291 535 zł.">
 <meta property="og:image" content="https://innov-8.pl/sabaly-og.jpg">
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -41,7 +38,6 @@
   }
 }
 </script>
-
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
 :root {
@@ -76,10 +72,18 @@ body{font-family:var(--sans);font-weight:400;background:var(--cream);color:var(-
 img{display:block;max-width:100%;object-fit:cover;}
 a{text-decoration:none;}
 button{font-family:var(--sans);cursor:pointer;}
-[data-en]{display:none!important;}
-body.en [data-pl]{display:none!important;}
-body.en [data-en]{display:inline!important;}
 
+/* ===================== LANGUAGE SYSTEM ===================== */
+/* Default: show PL, hide EN */
+[data-en]{display:none!important;}
+/* EN active: hide PL, show EN */
+body.en [data-pl]{display:none!important;}
+body.en [data-en]{display:revert!important;}
+/* Fix for block elements in EN mode */
+body.en span[data-en]{display:inline!important;}
+body.en div[data-en]{display:block!important;}
+
+/* ===================== UTILITIES ===================== */
 .tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--gold);margin-bottom:16px;}
 .tag::before{content:'';width:20px;height:1.5px;background:var(--gold);flex-shrink:0;}
 .tag.inv{color:var(--gi);}
@@ -96,11 +100,11 @@ body.en [data-en]{display:inline!important;}
 .btn-inv:hover{background:var(--gi-l);}
 .btn-ol{background:transparent;color:var(--gold);border:1.5px solid var(--gold);}
 .btn-ol:hover{background:var(--gold);color:var(--charcoal);}
-.sr{opacity:1;transform:none;transition:opacity .65s ease,transform .65s ease;}
+.sr{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease;}
 .sr.vis{opacity:1;transform:none;}
 .d1{transition-delay:.08s}.d2{transition-delay:.15s}.d3{transition-delay:.22s}.d4{transition-delay:.3s}
 
-/* NAVBAR */
+/* ===================== NAVBAR ===================== */
 #nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:18px 52px;transition:all .4s;}
 #nav.sc{background:var(--charcoal);padding:12px 52px;box-shadow:0 2px 30px rgba(0,0,0,.2);}
 .nav-logo{display:flex;align-items:center;gap:9px;}
@@ -141,7 +145,7 @@ body.en [data-en]{display:inline!important;}
 .mob-lang button{font-family:var(--sans);font-size:13px;letter-spacing:.12em;text-transform:uppercase;background:none;border:none;color:rgba(245,240,232,.45);cursor:pointer;}
 .mob-lang button.active{color:var(--gold-l);}
 
-/* HERO */
+/* ===================== HERO ===================== */
 .hero{height:100vh;min-height:580px;position:relative;overflow:hidden;display:flex;align-items:flex-end;}
 .hero-bg{position:absolute;inset:0;}
 .hero-bg img{width:100%;height:100%;object-fit:cover;}
@@ -159,8 +163,6 @@ body.en [data-en]{display:inline!important;}
 .hstat{padding:18px 28px;border-left:1px solid rgba(255,255,255,.07);background:rgba(10,10,10,.7);backdrop-filter:blur(8px);}
 .hstat-n{font-family:var(--serif);font-size:26px;color:var(--gi);line-height:1;margin-bottom:3px;}
 .hstat-l{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,240,232,.38);}
-
-/* ANIMATIONS */
 .hero-badge{opacity:0;animation:fadeUp .7s .2s forwards;}
 .hero-title{opacity:0;animation:fadeUp .7s .35s forwards;}
 .hero-sub{opacity:0;animation:fadeUp .7s .5s forwards;}
@@ -170,7 +172,7 @@ body.en [data-en]{display:inline!important;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
-/* O INWESTYCJI */
+/* ===================== O INWESTYCJI ===================== */
 .about-inv{background:var(--cream);padding:96px 52px;}
 .ai-inner{display:grid;grid-template-columns:1fr 1fr;gap:76px;align-items:center;}
 .ai-media{position:relative;}
@@ -185,7 +187,7 @@ body.en [data-en]{display:inline!important;}
 .aif{display:flex;align-items:center;gap:9px;font-size:13px;}
 .aif-ic{width:26px;height:26px;background:var(--gold-p);border:1px solid var(--bg);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:11px;flex-shrink:0;}
 
-/* FLOOR PLAN */
+/* ===================== FLOOR PLAN ===================== */
 .floorplan{background:var(--ink-m);padding:80px 52px;}
 .fp-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
 .fp-img{border:1px solid var(--bi);overflow:hidden;background:var(--ink-l);}
@@ -197,7 +199,7 @@ body.en [data-en]{display:inline!important;}
 .fps-l{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ti-s);}
 .fps-v{font-size:14px;font-weight:500;color:var(--ti);}
 
-/* UNIT TABLE */
+/* ===================== UNIT TABLE ===================== */
 .units{background:var(--cream-d);padding:80px 52px;}
 .units-hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:36px;gap:20px;flex-wrap:wrap;}
 .units-title{font-size:clamp(26px,3vw,42px);}
@@ -207,12 +209,9 @@ body.en [data-en]{display:inline!important;}
 .dot-avail{background:#6fcf97;}
 .dot-reserved{background:#f2c94c;}
 .dot-sold{background:#bdbdbd;}
-
-/* filter bar */
 .unit-filters{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
 .uf{background:transparent;border:1px solid var(--bl);color:var(--ch-l);padding:7px 16px;font-size:11.5px;font-family:var(--sans);cursor:pointer;transition:all .25s;letter-spacing:.06em;}
 .uf.active,.uf:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-p);}
-
 .unit-table{width:100%;border-collapse:collapse;font-size:13.5px;}
 .unit-table thead tr{background:var(--charcoal);}
 .unit-table th{padding:13px 16px;text-align:left;font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:rgba(245,240,232,.5);}
@@ -220,7 +219,6 @@ body.en [data-en]{display:inline!important;}
 .unit-table tbody tr:hover{background:var(--gold-p);}
 .unit-table td{padding:13px 16px;color:var(--charcoal);}
 .unit-table td:first-child{font-weight:500;}
-.unit-table .price{font-family:var(--serif);font-size:15px;color:var(--gold);}
 .unit-table .total{font-weight:500;}
 .status-badge{display:inline-block;padding:3px 10px;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;}
 .s-avail{background:rgba(111,207,151,.12);color:#27ae60;border:1px solid rgba(111,207,151,.3);}
@@ -229,19 +227,17 @@ body.en [data-en]{display:inline!important;}
 .price-tag-std{color:var(--gold);}
 .price-tag-high{color:#9b59b6;}
 .price-tag-low{color:#e74c3c;}
-
-/* price type legend */
 .price-legend{display:flex;gap:16px;margin-bottom:12px;flex-wrap:wrap;}
 .pl-item{display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--ch-l);}
 .pl-dot{width:10px;height:10px;border-radius:2px;}
-
-/* summary bar */
 .unit-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:3px;}
 .us-item{background:var(--charcoal);padding:18px 22px;text-align:center;}
 .us-n{font-family:var(--serif);font-size:24px;color:var(--gi);line-height:1;margin-bottom:3px;}
 .us-l{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,240,232,.38);}
+.enquire-btn{background:var(--gold);border:none;color:var(--charcoal);padding:6px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);transition:background .2s;}
+.enquire-btn:hover{background:var(--gold-l);}
 
-/* LOKALIZACJA */
+/* ===================== LOKALIZACJA ===================== */
 .location{background:var(--cream);padding:80px 52px;}
 .loc-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;}
 .loc-title{font-size:clamp(24px,2.8vw,38px);margin-bottom:14px;}
@@ -254,10 +250,9 @@ body.en [data-en]{display:inline!important;}
 .lc-items{display:flex;flex-direction:column;gap:4px;}
 .lc-item{font-size:11.5px;color:var(--ch-l);display:flex;align-items:baseline;gap:6px;}
 .lc-item::before{content:'→';color:var(--gold);font-size:10px;flex-shrink:0;}
-.loc-map{background:var(--ink-l);border:1px solid var(--bi);overflow:hidden;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--ti-s);font-size:11px;letter-spacing:.1em;text-transform:uppercase;}
 .loc-map iframe{width:100%;height:400px;border:none;filter:grayscale(40%) contrast(1.05);}
 
-/* KONTAKT */
+/* ===================== KONTAKT ===================== */
 .contact{background:var(--ink);padding:80px 52px;}
 .contact-inner{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:start;}
 .ct-title{font-size:clamp(24px,2.8vw,38px);color:var(--ti);margin-bottom:12px;}
@@ -267,12 +262,14 @@ body.en [data-en]{display:inline!important;}
 .cti-ic{width:30px;height:30px;background:rgba(197,160,89,.1);border:1px solid var(--bi);display:flex;align-items:center;justify-content:center;color:var(--gi);font-size:11px;flex-shrink:0;margin-top:1px;}
 .cti-lbl{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gi);margin-bottom:3px;}
 .cti-val{font-size:13px;color:var(--ti);line-height:1.5;}
+.cti-val a{color:var(--ti);text-decoration:underline;text-underline-offset:2px;opacity:.7;transition:opacity .2s;}
+.cti-val a:hover{opacity:1;}
 .cf-box{background:var(--ink-l);border:1px solid var(--bi);padding:36px;position:relative;overflow:hidden;}
 .cf-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gi),var(--gi-l),transparent);}
 .cf-title{font-family:var(--serif);font-size:22px;color:var(--ti);margin-bottom:22px;}
 .cfg{display:flex;flex-direction:column;gap:5px;margin-bottom:11px;}
 .cfg label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ti-s);}
-.cfg input,.cfg textarea,.cfg select{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--ti);padding:10px 12px;font-family:var(--sans);font-size:13px;outline:none;transition:border-color .3s;resize:none;-webkit-appearance:none;}
+.cfg input,.cfg textarea,.cfg select{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--ti);padding:10px 12px;font-family:var(--sans);font-size:13px;outline:none;transition:border-color .3s;resize:none;-webkit-appearance:none;width:100%;}
 .cfg input::placeholder,.cfg textarea::placeholder{color:rgba(245,240,232,.18);}
 .cfg input:focus,.cfg textarea:focus,.cfg select:focus{border-color:var(--gi);}
 .cfg select option{background:#1a1a1a;}
@@ -280,14 +277,14 @@ body.en [data-en]{display:inline!important;}
 .cf-btn{width:100%;background:var(--gi);color:var(--ink);padding:13px;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;font-family:var(--sans);border:none;cursor:pointer;transition:all .3s;margin-top:4px;}
 .cf-btn:hover{background:var(--gi-l);}
 
-/* FOOTER MINI */
+/* ===================== FOOTER ===================== */
 .foot-mini{background:#0D0D0D;padding:28px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;border-top:1px solid rgba(255,255,255,.05);}
 .foot-mini p{font-size:11.5px;color:rgba(245,240,232,.22);}
 .foot-mini a{color:rgba(245,240,232,.22);transition:color .3s;}
 .foot-mini a:hover{color:var(--gi);}
 .foot-social{display:flex;gap:18px;}
 
-/* STICKY CTA */
+/* ===================== STICKY CTA ===================== */
 #sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:400;background:var(--charcoal);border-top:2px solid var(--gold);padding:14px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;transform:translateY(100%);transition:transform .4s ease;box-shadow:0 -4px 30px rgba(0,0,0,.3);}
 #sticky-cta.show{transform:translateY(0);}
 .sc-info{display:flex;align-items:center;gap:20px;}
@@ -296,8 +293,7 @@ body.en [data-en]{display:inline!important;}
 .sc-price span{color:var(--gold-l);font-weight:500;}
 .sc-btns{display:flex;gap:10px;}
 
-
-/* RESPONSIVE */
+/* ===================== RESPONSIVE ===================== */
 @media(max-width:1024px){
   .ai-inner,.fp-inner,.contact-inner{grid-template-columns:1fr;}
   .loc-inner{grid-template-columns:1fr;gap:44px;}
@@ -347,6 +343,7 @@ body.en [data-en]{display:inline!important;}
   </div>
   <button class="burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
+
 <div id="mob-menu">
   <a href="index.html#portfolio" onclick="toggleMenu()"><span data-pl>Wszystkie Projekty</span><span data-en>All Projects</span></a>
   <a href="#units" onclick="toggleMenu()"><span data-pl>Dostępne Lokale</span><span data-en>Available Units</span></a>
@@ -446,9 +443,9 @@ body.en [data-en]{display:inline!important;}
         <div class="fps"><span class="fps-l"><span data-pl>Kondygnacje</span><span data-en>Floors</span></span><span class="fps-v"><span data-pl>Piwnica + Parter + 2 Piętra + Strych</span><span data-en>Basement + Ground + 2 Floors + Attic</span></span></div>
         <div class="fps"><span class="fps-l"><span data-pl>Liczba lokali</span><span data-en>Number of units</span></span><span class="fps-v">17</span></div>
         <div class="fps"><span class="fps-l"><span data-pl>Metraże</span><span data-en>Sizes</span></span><span class="fps-v">14,65 – 35,05 m²</span></div>
-        <div class="fps"><span class="fps-l"><span data-pl>Standard</span><span data-en>Standard</span></span><span class="fps-v"><span data-pl>Stan do remontu</span><span data-en>Raw / ready for fit-out</span></span></div>
+        <div class="fps"><span class="fps-l">Standard</span><span class="fps-v"><span data-pl>Stan do remontu</span><span data-en>Raw / ready for fit-out</span></span></div>
         <div class="fps"><span class="fps-l"><span data-pl>Balkony</span><span data-en>Balconies</span></span><span class="fps-v"><span data-pl>Tak — lokale na piętrach</span><span data-en>Yes — upper floor units</span></span></div>
-        <div class="fps"><span class="fps-l"><span data-pl>Parking</span><span data-en>Parking</span></span><span class="fps-v"><span data-pl>Tak — dla mieszkańców i gości</span><span data-en>Yes — for residents and guests</span></span></div>
+        <div class="fps"><span class="fps-l">Parking</span><span class="fps-v"><span data-pl>Tak — dla mieszkańców i gości</span><span data-en>Yes — for residents and guests</span></span></div>
         <div class="fps"><span class="fps-l"><span data-pl>Odbiory</span><span data-en>Handover</span></span><span class="fps-v"><span data-pl>Czerwiec–Lipiec 2026</span><span data-en>June–July 2026</span></span></div>
       </div>
       <a href="#contact" class="btn btn-inv"><span data-pl>Zapytaj o Rzuty</span><span data-en>Request Floor Plans</span></a>
@@ -482,12 +479,13 @@ body.en [data-en]{display:inline!important;}
     <div class="pl-item"><div class="pl-dot" style="background:#e74c3c"></div><span data-pl>15 300 zł/m² — oferta specjalna</span><span data-en>PLN 15,300/m² — special offer</span></div>
   </div>
 
-  <div class="unit-filters sr">
-    <button class="uf active" onclick="filterUnits('all',this)" data-pl>Wszystkie</button>
-    <button class="uf" onclick="filterUnits('avail',this)" data-pl>Dostępne</button>
-    <button class="uf" onclick="filterUnits('small',this)"><span data-pl>Do 20 m²</span><span data-en>Up to 20 m²</span></button>
-    <button class="uf" onclick="filterUnits('medium',this)"><span data-pl>20–30 m²</span><span data-en>20–30 m²</span></button>
-    <button class="uf" onclick="filterUnits('large',this)"><span data-pl>Powyżej 30 m²</span><span data-en>Above 30 m²</span></button>
+  <!-- FILTER BUTTONS — labels rendered by JS for correct lang -->
+  <div class="unit-filters sr" id="unit-filters">
+    <button class="uf active" data-filter="all" onclick="filterUnits('all',this)"></button>
+    <button class="uf" data-filter="avail" onclick="filterUnits('avail',this)"></button>
+    <button class="uf" data-filter="small" onclick="filterUnits('small',this)"></button>
+    <button class="uf" data-filter="medium" onclick="filterUnits('medium',this)"></button>
+    <button class="uf" data-filter="large" onclick="filterUnits('large',this)"></button>
   </div>
 
   <div class="sr" style="overflow-x:auto">
@@ -499,29 +497,11 @@ body.en [data-en]{display:inline!important;}
           <th><span data-pl>Cena/m²</span><span data-en>Price/m²</span></th>
           <th><span data-pl>Cena całkowita</span><span data-en>Total price</span></th>
           <th><span data-pl>Odbiór</span><span data-en>Handover</span></th>
-          <th><span data-pl>Status</span><span data-en>Status</span></th>
+          <th>Status</th>
           <th></th>
         </tr>
       </thead>
-      <tbody id="unit-tbody">
-        <tr onclick="document.getElementById('cf-unit').value='Lokal 1 — 29,75 m² · 520 625 zł';document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><td>Lokal 1</td><td><strong>29,75 m²</strong></td><td class="price-tag-std">17 500 zł/m²</td><td class="total">520 625 zł</td><td>06/2026</td><td><span class="status-badge s-avail">Dostępny</span></td><td><button onclick="event.stopPropagation();document.getElementById('cf-unit').value='Lokal 1';document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:var(--gold);border:none;color:var(--charcoal);padding:6px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);">Zapytaj</button></td></tr>
-        <tr onclick="document.getElementById('cf-unit').value='Lokal 2 — 31,21 m² · 546 175 zł';document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><td>Lokal 2</td><td><strong>31,21 m²</strong></td><td class="price-tag-std">17 500 zł/m²</td><td class="total">546 175 zł</td><td>06/2026</td><td><span class="status-badge s-avail">Dostępny</span></td><td><button onclick="event.stopPropagation();document.getElementById('cf-unit').value='Lokal 2';document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:var(--gold);border:none;color:var(--charcoal);padding:6px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);">Zapytaj</button></td></tr>
-        <tr onclick="document.getElementById('cf-unit').value='Lokal 3 — 14,85 m² · 295 515 zł';document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><td>Lokal 3</td><td><strong>14,85 m²</strong></td><td class="price-tag-high">19 900 zł/m²</td><td class="total">295 515 zł</td><td>06/2026</td><td><span class="status-badge s-avail">Dostępny</span></td><td><button onclick="event.stopPropagation();document.getElementById('cf-unit').value='Lokal 3';document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:var(--gold);border:none;color:var(--charcoal);padding:6px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);">Zapytaj</button></td></tr>
-        <tr onclick="document.getElementById('cf-unit').value='Lokal 4 — 31,89 m² · 558 075 zł';document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><td>Lokal 4</td><td><strong>31,89 m²</strong></td><td class="price-tag-std">17 500 zł/m²</td><td class="total">558 075 zł</td><td>06/2026</td><td><span class="status-badge s-avail">Dostępny</span></td><td><button onclick="event.stopPropagation();document.getElementById('cf-unit').value='Lokal 4';document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:var(--gold);border:none;color:var(--charcoal);padding:6px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);">Zapytaj</button></td></tr>
-        <tr onclick="document.getElementById('cf-unit').value='Lokal 5 — 30,73 m² · 537 775 zł';document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><td>Lokal 5</td><td><strong>30,73 m²</strong></td><td class="price-tag-std">17 500 zł/m²</td><td class="total">537 775 zł</td><td>06/2026</td><td><span class="status-badge s-avail">Dostępny</span></td><td><button onclick="event.stopPropagation();document.getElementById('cf-unit').value='Lokal 5';document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:var(--gold);border:none;color:var(--charcoal);padding:6px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);">Zapytaj</button></td></tr>
-        <tr onclick="document.getElementById('cf-unit').value='Lokal 6 — 32,09 m² · 561 575 zł';document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><td>Lokal 6</td><td><strong>32,09 m²</strong></td><td class="price-tag-std">17 500 zł/m²</td><td class="total">561 575 zł</td><td>06/2026</td><td><span class="status-badge s-avail">Dostępny</span></td><td><button onclick="event.stopPropagation();document.getElementById('cf-unit').value='Lokal 6';document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:var(--gold);border:none;color:var(--charcoal);padding:6px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);">Zapytaj</button></td></tr>
-        <tr onclick="document.getElementById('cf-unit').value='Lokal 7 — 32,27 m² · 564 725 zł';document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><td>Lokal 7</td><td><strong>32,27 m²</strong></td><td class="price-tag-std">17 500 zł/m²</td><td class="total">564 725 zł</td><td>06/2026</td><td><span class="status-badge s-avail">Dostępny</span></td><td><button onclick="event.stopPropagation();document.getElementById('cf-unit').value='Lokal 7';document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:var(--gold);border:none;color:var(--charcoal);padding:6px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);">Zapytaj</button></td></tr>
-        <tr onclick="document.getElementById('cf-unit').value='Lokal 8 — 14,65 m² · 291 535 zł';document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><td>Lokal 8</td><td><strong>14,65 m²</strong></td><td class="price-tag-high">19 900 zł/m²</td><td class="total">291 535 zł</td><td>06/2026</td><td><span class="status-badge s-avail">Dostępny</span></td><td><button onclick="event.stopPropagation();document.getElementById('cf-unit').value='Lokal 8';document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:var(--gold);border:none;color:var(--charcoal);padding:6px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);">Zapytaj</button></td></tr>
-        <tr onclick="document.getElementById('cf-unit').value='Lokal 9 — 32,03 m² · 560 525 zł';document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><td>Lokal 9</td><td><strong>32,03 m²</strong></td><td class="price-tag-std">17 500 zł/m²</td><td class="total">560 525 zł</td><td>06/2026</td><td><span class="status-badge s-avail">Dostępny</span></td><td><button onclick="event.stopPropagation();document.getElementById('cf-unit').value='Lokal 9';document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:var(--gold);border:none;color:var(--charcoal);padding:6px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);">Zapytaj</button></td></tr>
-        <tr onclick="document.getElementById('cf-unit').value='Lokal 10 — 33,19 m² · 580 825 zł';document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><td>Lokal 10</td><td><strong>33,19 m²</strong></td><td class="price-tag-std">17 500 zł/m²</td><td class="total">580 825 zł</td><td>06/2026</td><td><span class="status-badge s-avail">Dostępny</span></td><td><button onclick="event.stopPropagation();document.getElementById('cf-unit').value='Lokal 10';document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:var(--gold);border:none;color:var(--charcoal);padding:6px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);">Zapytaj</button></td></tr>
-        <tr onclick="document.getElementById('cf-unit').value='Lokal 11 — 31,69 m² · 554 575 zł';document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><td>Lokal 11</td><td><strong>31,69 m²</strong></td><td class="price-tag-std">17 500 zł/m²</td><td class="total">554 575 zł</td><td>06/2026</td><td><span class="status-badge s-avail">Dostępny</span></td><td><button onclick="event.stopPropagation();document.getElementById('cf-unit').value='Lokal 11';document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:var(--gold);border:none;color:var(--charcoal);padding:6px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);">Zapytaj</button></td></tr>
-        <tr onclick="document.getElementById('cf-unit').value='Lokal 12 — 33,20 m² · 581 000 zł';document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><td>Lokal 12</td><td><strong>33,20 m²</strong></td><td class="price-tag-std">17 500 zł/m²</td><td class="total">581 000 zł</td><td>06/2026</td><td><span class="status-badge s-avail">Dostępny</span></td><td><button onclick="event.stopPropagation();document.getElementById('cf-unit').value='Lokal 12';document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:var(--gold);border:none;color:var(--charcoal);padding:6px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);">Zapytaj</button></td></tr>
-        <tr onclick="document.getElementById('cf-unit').value='Lokal 13 — 14,71 m² · 292 729 zł';document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><td>Lokal 13</td><td><strong>14,71 m²</strong></td><td class="price-tag-high">19 900 zł/m²</td><td class="total">292 729 zł</td><td>06/2026</td><td><span class="status-badge s-avail">Dostępny</span></td><td><button onclick="event.stopPropagation();document.getElementById('cf-unit').value='Lokal 13';document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:var(--gold);border:none;color:var(--charcoal);padding:6px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);">Zapytaj</button></td></tr>
-        <tr onclick="document.getElementById('cf-unit').value='Lokal 14 — 32,64 m² · 571 200 zł';document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><td>Lokal 14</td><td><strong>32,64 m²</strong></td><td class="price-tag-std">17 500 zł/m²</td><td class="total">571 200 zł</td><td>06/2026</td><td><span class="status-badge s-avail">Dostępny</span></td><td><button onclick="event.stopPropagation();document.getElementById('cf-unit').value='Lokal 14';document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:var(--gold);border:none;color:var(--charcoal);padding:6px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);">Zapytaj</button></td></tr>
-        <tr onclick="document.getElementById('cf-unit').value='Lokal 15 — 35,05 m² · 613 375 zł';document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><td>Lokal 15</td><td><strong>35,05 m²</strong></td><td class="price-tag-std">17 500 zł/m²</td><td class="total">613 375 zł</td><td>06/2026</td><td><span class="status-badge s-avail">Dostępny</span></td><td><button onclick="event.stopPropagation();document.getElementById('cf-unit').value='Lokal 15';document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:var(--gold);border:none;color:var(--charcoal);padding:6px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);">Zapytaj</button></td></tr>
-        <tr onclick="document.getElementById('cf-unit').value='Lokal 16 — 30,00 m² · 459 000 zł';document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><td>Lokal 16</td><td><strong>30,00 m²</strong></td><td class="price-tag-low">15 300 zł/m²</td><td class="total">459 000 zł</td><td>06/2026</td><td><span class="status-badge s-avail">Dostępny</span></td><td><button onclick="event.stopPropagation();document.getElementById('cf-unit').value='Lokal 16';document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:var(--gold);border:none;color:var(--charcoal);padding:6px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);">Zapytaj</button></td></tr>
-        <tr onclick="document.getElementById('cf-unit').value='Lokal 17 — 30,00 m² · 459 000 zł';document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><td>Lokal 17</td><td><strong>30,00 m²</strong></td><td class="price-tag-low">15 300 zł/m²</td><td class="total">459 000 zł</td><td>07/2026</td><td><span class="status-badge s-avail">Dostępny</span></td><td><button onclick="event.stopPropagation();document.getElementById('cf-unit').value='Lokal 17';document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:var(--gold);border:none;color:var(--charcoal);padding:6px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);">Zapytaj</button></td></tr>
-      </tbody>
+      <tbody id="unit-tbody"></tbody>
     </table>
   </div>
 
@@ -590,9 +570,10 @@ body.en [data-en]{display:inline!important;}
       </div>
     </div>
     <div class="sr d2">
-      <div class="loc-map">
+      <div style="border:1px solid var(--bi);overflow:hidden;">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2445.0!2d20.9285!3d52.2012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47192d3a3db14e8b%3A0x1!2sSaba%C5%82y+52%2C+Warszawa!5e0!3m2!1spl!2spl!4v1"
+          width="100%" height="400" style="display:block;border:none;filter:grayscale(40%) contrast(1.05);"
           allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
           title="Mapa Sabały 52 Warszawa">
         </iframe>
@@ -620,22 +601,37 @@ body.en [data-en]{display:inline!important;}
         <span data-en>We are happy to answer all questions about the Sabały 52 investment. Contact us to arrange a site visit or receive detailed information about a selected unit.</span>
       </p>
       <div class="ct-info">
-        <div class="cti-row"><div class="cti-ic">✆</div><div><div class="cti-lbl"><span data-pl>Telefon</span><span data-en>Phone</span></div><div class="cti-val">+48 535 033 499</div></div></div>
-        <div class="cti-row"><div class="cti-ic">@</div><div><div class="cti-lbl">Email</div><div class="cti-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6e0c071b1c012e07000001184356401e02">[email&#160;protected]</a></div></div></div>
-        <div class="cti-row"><div class="cti-ic">◷</div><div><div class="cti-lbl"><span data-pl>Godziny</span><span data-en>Hours</span></div><div class="cti-val"><span data-pl>Pon–Pt 9:00–18:00</span><span data-en>Mon–Fri 9:00–18:00</span></div></div></div>
+        <div class="cti-row">
+          <div class="cti-ic">✆</div>
+          <div><div class="cti-lbl"><span data-pl>Telefon</span><span data-en>Phone</span></div><div class="cti-val">+48 535 033 499</div></div>
+        </div>
+        <div class="cti-row">
+          <div class="cti-ic">@</div>
+          <div><div class="cti-lbl">Email</div><div class="cti-val"><a href="mailto:biuro@innov-8.pl">biuro@innov-8.pl</a></div></div>
+        </div>
+        <div class="cti-row">
+          <div class="cti-ic">◷</div>
+          <div><div class="cti-lbl"><span data-pl>Godziny</span><span data-en>Hours</span></div><div class="cti-val"><span data-pl>Pon–Pt 9:00–18:00</span><span data-en>Mon–Fri 9:00–18:00</span></div></div>
+        </div>
       </div>
     </div>
     <div class="cf-box sr d2">
       <div class="cf-title"><span data-pl>Wyślij Zapytanie</span><span data-en>Send Enquiry</span></div>
       <div class="cf-row">
-        <div class="cfg"><label data-pl>Imię i Nazwisko</label><label data-en>Full Name</label><input type="text" id="cf-name" placeholder="Jan Kowalski"></div>
-        <div class="cfg"><label data-pl>Telefon</label><label data-en>Phone</label><input type="tel" id="cf-tel" placeholder="+48 000 000 000"></div>
+        <div class="cfg">
+          <label><span data-pl>Imię i Nazwisko</span><span data-en>Full Name</span></label>
+          <input type="text" id="cf-name" placeholder="Jan Kowalski">
+        </div>
+        <div class="cfg">
+          <label><span data-pl>Telefon</span><span data-en>Phone</span></label>
+          <input type="tel" id="cf-tel" placeholder="+48 000 000 000">
+        </div>
       </div>
       <div class="cfg"><label>Email</label><input type="email" id="cf-email" placeholder="jan@example.com"></div>
       <div class="cfg">
         <label><span data-pl>Interesuje mnie</span><span data-en>I am interested in</span></label>
         <select id="cf-unit">
-          <option value=""><span data-pl>Wybierz lokal (opcjonalnie)</span><span data-en>Select unit (optional)</span></option>
+          <option value=""><span data-pl>Wybierz lokal (opcjonalnie)</span></option>
           <option>Lokal 1 — 29,75 m² · 520 625 zł</option>
           <option>Lokal 2 — 31,21 m² · 546 175 zł</option>
           <option>Lokal 3 — 14,85 m² · 295 515 zł</option>
@@ -655,8 +651,13 @@ body.en [data-en]{display:inline!important;}
           <option>Lokal 17 — 30,00 m² · 459 000 zł</option>
         </select>
       </div>
-      <div class="cfg"><label><span data-pl>Wiadomość</span><span data-en>Message</span></label><textarea rows="3" id="cf-msg" placeholder="..."></textarea></div>
-      <button class="cf-btn" id="cf-btn" onclick="submitForm()"><span data-pl>Wyślij Zapytanie →</span><span data-en>Send Enquiry →</span></button>
+      <div class="cfg">
+        <label><span data-pl>Wiadomość</span><span data-en>Message</span></label>
+        <textarea rows="3" id="cf-msg" placeholder="..."></textarea>
+      </div>
+      <button class="cf-btn" id="cf-btn" onclick="submitForm()">
+        <span data-pl>Wyślij Zapytanie →</span><span data-en>Send Enquiry →</span>
+      </button>
     </div>
   </div>
 </section>
@@ -678,7 +679,11 @@ body.en [data-en]{display:inline!important;}
 <div id="sticky-cta">
   <div class="sc-info">
     <div class="sc-name">Sabały 52</div>
-    <div class="sc-price"><span data-pl>od</span><span data-en>from</span> <span>291 535 zł</span> · <span data-pl>17 lokali</span><span data-en>17 units</span></div>
+    <div class="sc-price">
+      <span data-pl>od</span><span data-en>from</span>
+      <span>291 535 zł</span> ·
+      <span data-pl>17 lokali</span><span data-en>17 units</span>
+    </div>
   </div>
   <div class="sc-btns">
     <a href="tel:+48535033499" class="btn btn-ol" style="padding:10px 20px;font-size:11px;color:var(--cream);border-color:rgba(255,255,255,.25)">+48 535 033 499</a>
@@ -686,125 +691,199 @@ body.en [data-en]{display:inline!important;}
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-/* EMAILJS */
+<script>
+/* ============================================================
+   EMAILJS
+============================================================ */
 (function(){ try{ emailjs.init({publicKey:'YOUR_PUBLIC_KEY'}); }catch(e){} })();
 const SVC='YOUR_SERVICE_ID', TPL='YOUR_TEMPLATE_CONTACT';
 
-/* LANG */
-function setLang(l){
-  document.body.classList.toggle('en',l==='en');
-  ['btn-pl','btn-en','mob-pl','mob-en'].forEach(id=>{
-    const el=document.getElementById(id);
-    if(el) el.classList.toggle('active',id.includes(l));
-  });
-  localStorage.setItem('i8-lang',l);
-  renderUnits();
-}
-(function(){ const l=localStorage.getItem('i8-lang'); if(l) setLang(l); })();
-
-/* NAV */
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{
-  nav.classList.toggle('sc',scrollY>60);
-  document.getElementById('sticky-cta').classList.toggle('show',scrollY>400);
-},{passive:true});
-
-function toggleMenu(){
-  document.getElementById('burger').classList.toggle('open');
-  document.getElementById('mob-menu').classList.toggle('open');
-  document.body.style.overflow=document.getElementById('mob-menu').classList.contains('open')?'hidden':'';
-}
-
-/* SCROLL REVEAL */
-const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.08});
-document.querySelectorAll('.sr').forEach(el=>obs.observe(el));
-
-/* UNIT DATA */
+/* ============================================================
+   UNIT DATA
+============================================================ */
 const UNITS=[
-  {id:1, m2:29.75, priceM:17500, total:520625, date:'2026-06-15', status:'avail'},
-  {id:2, m2:31.21, priceM:17500, total:546175, date:'2026-06-16', status:'avail'},
-  {id:3, m2:14.85, priceM:19900, total:295515, date:'2026-06-17', status:'avail'},
-  {id:4, m2:31.89, priceM:17500, total:558075, date:'2026-06-18', status:'avail'},
-  {id:5, m2:30.73, priceM:17500, total:537775, date:'2026-06-19', status:'avail'},
-  {id:6, m2:32.09, priceM:17500, total:561575, date:'2026-06-20', status:'avail'},
-  {id:7, m2:32.27, priceM:17500, total:564725, date:'2026-06-21', status:'avail'},
-  {id:8, m2:14.65, priceM:19900, total:291535, date:'2026-06-22', status:'avail'},
-  {id:9, m2:32.03, priceM:17500, total:560525, date:'2026-06-23', status:'avail'},
-  {id:10,m2:33.19, priceM:17500, total:580825, date:'2026-06-24', status:'avail'},
-  {id:11,m2:31.69, priceM:17500, total:554575, date:'2026-06-25', status:'avail'},
-  {id:12,m2:33.20, priceM:17500, total:581000, date:'2026-06-26', status:'avail'},
-  {id:13,m2:14.71, priceM:19900, total:292729, date:'2026-06-27', status:'avail'},
-  {id:14,m2:32.64, priceM:17500, total:571200, date:'2026-06-28', status:'avail'},
-  {id:15,m2:35.05, priceM:17500, total:613375, date:'2026-06-29', status:'avail'},
-  {id:16,m2:30.00, priceM:15300, total:459000, date:'2026-06-30', status:'avail'},
-  {id:17,m2:30.00, priceM:15300, total:459000, date:'2026-07-01', status:'avail'},
+  {id:1,  m2:29.75, priceM:17500, total:520625, date:'06/2026', status:'avail'},
+  {id:2,  m2:31.21, priceM:17500, total:546175, date:'06/2026', status:'avail'},
+  {id:3,  m2:14.85, priceM:19900, total:295515, date:'06/2026', status:'avail'},
+  {id:4,  m2:31.89, priceM:17500, total:558075, date:'06/2026', status:'avail'},
+  {id:5,  m2:30.73, priceM:17500, total:537775, date:'06/2026', status:'avail'},
+  {id:6,  m2:32.09, priceM:17500, total:561575, date:'06/2026', status:'avail'},
+  {id:7,  m2:32.27, priceM:17500, total:564725, date:'06/2026', status:'avail'},
+  {id:8,  m2:14.65, priceM:19900, total:291535, date:'06/2026', status:'avail'},
+  {id:9,  m2:32.03, priceM:17500, total:560525, date:'06/2026', status:'avail'},
+  {id:10, m2:33.19, priceM:17500, total:580825, date:'06/2026', status:'avail'},
+  {id:11, m2:31.69, priceM:17500, total:554575, date:'06/2026', status:'avail'},
+  {id:12, m2:33.20, priceM:17500, total:581000, date:'06/2026', status:'avail'},
+  {id:13, m2:14.71, priceM:19900, total:292729, date:'06/2026', status:'avail'},
+  {id:14, m2:32.64, priceM:17500, total:571200, date:'06/2026', status:'avail'},
+  {id:15, m2:35.05, priceM:17500, total:613375, date:'06/2026', status:'avail'},
+  {id:16, m2:30.00, priceM:15300, total:459000, date:'06/2026', status:'avail'},
+  {id:17, m2:30.00, priceM:15300, total:459000, date:'07/2026', status:'avail'},
 ];
 
+/* ============================================================
+   HELPERS
+============================================================ */
 function fmt(n){return new Intl.NumberFormat('pl-PL').format(n)+' zł';}
+function fmtM2(n){return n.toFixed(2).replace('.',',')+' m²';}
 function priceClass(p){return p===19900?'price-tag-high':p===15300?'price-tag-low':'price-tag-std';}
+function isEn(){return document.body.classList.contains('en');}
+
 function statusBadge(s){
-  const isEn=document.body.classList.contains('en');
-  if(s==='avail') return `<span class="status-badge s-avail">${isEn?'Available':'Dostępny'}</span>`;
-  if(s==='res')   return `<span class="status-badge s-res">${isEn?'Reserved':'Zarezerwowany'}</span>`;
-  return `<span class="status-badge s-sold">${isEn?'Sold':'Sprzedany'}</span>`;
+  const en=isEn();
+  if(s==='avail') return `<span class="status-badge s-avail">${en?'Available':'Dostępny'}</span>`;
+  if(s==='res')   return `<span class="status-badge s-res">${en?'Reserved':'Zarezerwowany'}</span>`;
+  return `<span class="status-badge s-sold">${en?'Sold':'Sprzedany'}</span>`;
 }
 
-function renderUnits(filter='all'){
-  const tbody=document.getElementById('unit-tbody');
-  const isEn=document.body.classList.contains('en');
-  let rows=UNITS.filter(u=>{
-    if(filter==='avail') return u.status==='avail';
-    if(filter==='small') return u.m2<=20;
-    if(filter==='medium') return u.m2>20&&u.m2<=30;
-    if(filter==='large') return u.m2>30;
+/* ============================================================
+   FILTER BUTTON LABELS
+============================================================ */
+const FILTER_LABELS = {
+  pl: { all:'Wszystkie', avail:'Dostępne', small:'Do 20 m²', medium:'20–30 m²', large:'Powyżej 30 m²' },
+  en: { all:'All',       avail:'Available',small:'Up to 20 m²', medium:'20–30 m²', large:'Above 30 m²' }
+};
+
+function updateFilterLabels(){
+  const lang = isEn() ? 'en' : 'pl';
+  document.querySelectorAll('.uf').forEach(btn=>{
+    const f = btn.dataset.filter;
+    btn.textContent = FILTER_LABELS[lang][f] || f;
+  });
+}
+
+/* ============================================================
+   RENDER UNITS
+============================================================ */
+let currentFilter = 'all';
+
+function enquireUnit(id, m2, total, event){
+  if(event) event.stopPropagation();
+  const val = `Lokal ${id} — ${fmtM2(m2)} · ${fmt(total)}`;
+  document.getElementById('cf-unit').value = val;
+  document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+}
+
+function renderUnits(filter){
+  filter = filter || currentFilter;
+  currentFilter = filter;
+  const tbody = document.getElementById('unit-tbody');
+  const en = isEn();
+
+  let rows = UNITS.filter(u=>{
+    if(filter==='avail')  return u.status==='avail';
+    if(filter==='small')  return u.m2<=20;
+    if(filter==='medium') return u.m2>20 && u.m2<=30;
+    if(filter==='large')  return u.m2>30;
     return true;
   });
-  tbody.innerHTML=rows.map(u=>`
-    <tr onclick="document.getElementById('cf-unit').value='Lokal ${u.id} — ${u.m2} m² · ${fmt(u.total)}';document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-      <td>Lokal ${u.id}</td>
-      <td><strong>${u.m2.toFixed(2)} m²</strong></td>
+
+  tbody.innerHTML = rows.map(u=>`
+    <tr onclick="enquireUnit(${u.id},${u.m2},${u.total})">
+      <td>${en?'Unit':'Lokal'} ${u.id}</td>
+      <td><strong>${fmtM2(u.m2)}</strong></td>
       <td class="${priceClass(u.priceM)}">${new Intl.NumberFormat('pl-PL').format(u.priceM)} zł/m²</td>
       <td class="total">${fmt(u.total)}</td>
-      <td>${u.date.replace('2026-0','Q').replace('-','/')}</td>
+      <td>${u.date}</td>
       <td>${statusBadge(u.status)}</td>
-      <td><button onclick="event.stopPropagation();document.getElementById('cf-unit').value='Lokal ${u.id} — ${u.m2} m² · ${fmt(u.total)}';document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:var(--gold);border:none;color:var(--charcoal);padding:6px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);transition:background .2s;" onmouseover="this.style.background='var(--gold-l)'" onmouseout="this.style.background='var(--gold)'">${isEn?'Enquire':'Zapytaj'}</button></td>
+      <td><button class="enquire-btn" onclick="enquireUnit(${u.id},${u.m2},${u.total},event)">${en?'Enquire':'Zapytaj'}</button></td>
     </tr>
   `).join('');
-  document.getElementById('sum-avail').textContent=rows.filter(u=>u.status==='avail').length;
+
+  document.getElementById('sum-avail').textContent = rows.filter(u=>u.status==='avail').length;
 }
 
-function filterUnits(filter,btn){
+function filterUnits(filter, btn){
   document.querySelectorAll('.uf').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   renderUnits(filter);
 }
 
-/* init sum */
-document.getElementById('sum-avail').textContent=17;
+/* ============================================================
+   LANGUAGE
+============================================================ */
+function setLang(l){
+  document.body.classList.toggle('en', l==='en');
+  ['btn-pl','btn-en','mob-pl','mob-en'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.classList.toggle('active', id.includes(l));
+  });
+  localStorage.setItem('i8-lang', l);
+  updateFilterLabels();
+  renderUnits();
+}
 
-/* CONTACT FORM */
+/* ============================================================
+   NAV / SCROLL
+============================================================ */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('sc', scrollY>60);
+  document.getElementById('sticky-cta').classList.toggle('show', scrollY>400);
+},{passive:true});
+
+function toggleMenu(){
+  document.getElementById('burger').classList.toggle('open');
+  document.getElementById('mob-menu').classList.toggle('open');
+  document.body.style.overflow = document.getElementById('mob-menu').classList.contains('open') ? 'hidden' : '';
+}
+
+/* ============================================================
+   SCROLL REVEAL
+============================================================ */
+const obs = new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting) e.target.classList.add('vis');
+}),{threshold:.08});
+document.querySelectorAll('.sr').forEach(el=>obs.observe(el));
+
+/* ============================================================
+   CONTACT FORM
+============================================================ */
 function submitForm(){
-  const name=document.getElementById('cf-name').value.trim();
-  const email=document.getElementById('cf-email').value.trim();
-  const isEn=document.body.classList.contains('en');
-  if(!name||!email){alert(isEn?'Please enter your name and email.':'Proszę podać imię i email.');return;}
+  const name  = document.getElementById('cf-name').value.trim();
+  const email = document.getElementById('cf-email').value.trim();
+  const en    = isEn();
+  if(!name||!email){alert(en?'Please enter your name and email.':'Proszę podać imię i email.');return;}
   const btn=document.getElementById('cf-btn');
   btn.disabled=true;
-  btn.textContent=isEn?'Sending...':'Wysyłanie...';
+  btn.textContent=en?'Sending...':'Wysyłanie...';
   try{
     emailjs.send(SVC,TPL,{
-      from_name:name,
-      phone:document.getElementById('cf-tel').value||'—',
+      from_name: name,
+      phone:     document.getElementById('cf-tel').value||'—',
       email,
-      unit:document.getElementById('cf-unit').value||'—',
-      message:document.getElementById('cf-msg').value||'—',
-      project:'Sabały 52',
-      language:isEn?'EN':'PL'
+      unit:      document.getElementById('cf-unit').value||'—',
+      message:   document.getElementById('cf-msg').value||'—',
+      project:   'Sabały 52',
+      language:  en?'EN':'PL'
     }).then(()=>{
-      btn.textContent=isEn?'Sent ✓':'Wysłano ✓';
-      btn.style.background='#6fcf97';btn.style.color='#fff';
+      btn.textContent=en?'Sent ✓':'Wysłano ✓';
+      btn.style.background='#6fcf97';
+      btn.style.color='#fff';
     }).catch(()=>{
       btn.disabled=false;
-      btn.textContent=isEn?'Send Enquiry →':'Wyślij Zapytanie →';
-      alert(isEn
+      btn.textContent=en?'Send Enquiry →':'Wyślij Zapytanie →';
+      alert(en?'Error sending. Please try again or call us.':'Błąd wysyłki. Prosimy spróbować ponownie lub zadzwonić.');
+    });
+  }catch(e){
+    btn.disabled=false;
+    btn.textContent=en?'Send Enquiry →':'Wyślij Zapytanie →';
+  }
+}
+
+/* ============================================================
+   INIT
+============================================================ */
+(function(){
+  const saved = localStorage.getItem('i8-lang');
+  if(saved && saved==='en'){
+    document.body.classList.add('en');
+    ['btn-pl','mob-pl'].forEach(id=>{ const el=document.getElementById(id); if(el) el.classList.remove('active'); });
+    ['btn-en','mob-en'].forEach(id=>{ const el=document.getElementById(id); if(el) el.classList.add('active'); });
+  }
+  updateFilterLabels();
+  renderUnits('all');
+})();
+</script>
+</body>
+</html>
