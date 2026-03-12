@@ -890,7 +890,7 @@ body.en [data-en]{display:revert;}
     </a>
     <!-- Sycowska 33 -->
     <a href="sycowska-33.html" class="pcard sr d1">
-      <div class="pc-inner" style="height:225px">
+      <div class="pc-inner" style="height:340px">
         <div class="pc-img"><img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=700&q=75&auto=format" alt="Sycowska 33 mieszkania Warszawa" loading="lazy"></div>
         <div class="pc-ov"></div>
         <div class="pc-badge badge-sale"><span data-pl>W Sprzedaży</span><span data-en>For Sale</span></div>
@@ -903,7 +903,7 @@ body.en [data-en]{display:revert;}
     </a>
     <!-- Ojrzanów -->
     <a href="ojrzanow.html" class="pcard sr d2">
-      <div class="pc-inner" style="height:225px">
+      <div class="pc-inner" style="height:340px">
         <div class="pc-img"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=75&auto=format" alt="Ojrzanów wille premium" loading="lazy"></div>
         <div class="pc-ov"></div>
         <div class="pc-badge badge-prog"><span data-pl>Pozwolenie na Budowę</span><span data-en>Planning Permission</span></div>
@@ -916,7 +916,7 @@ body.en [data-en]{display:revert;}
     </a>
     <!-- Czarny Las -->
     <div class="pcard sr d3" style="cursor:default">
-      <div class="pc-inner" style="height:225px">
+      <div class="pc-inner" style="height:340px">
         <div class="pc-img"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=700&q=75&auto=format" alt="Czarny Las działki ekskluzywne" loading="lazy"></div>
         <div class="pc-ov"></div>
         <div class="pc-badge badge-concept"><span data-pl>Faza Koncepcji</span><span data-en>Concept Phase</span></div>
@@ -1182,7 +1182,7 @@ body.en [data-en]{display:revert;}
       </p>
       <div>
         <div class="cinfo-row"><div class="cinfo-ic">✆</div><div><div class="cinfo-lbl"><span data-pl>Telefon</span><span data-en>Phone</span></div><div class="cinfo-val">+48 535 033 499</div></div></div>
-        <div class="cinfo-row"><div class="cinfo-ic">@</div><div><div class="cinfo-lbl">Email</div><div class="cinfo-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fb99928e8994bb929595948dd6c3d58b97">[email&#160;protected]</a></div></div></div>
+        <div class="cinfo-row"><div class="cinfo-ic">@</div><div><div class="cinfo-lbl">Email</div><div class="cinfo-val"><a href="mailto:biuro@innov-8.pl">biuro@innov-8.pl</a></div></div></div>
         <div class="cinfo-row"><div class="cinfo-ic">⌖</div><div><div class="cinfo-lbl"><span data-pl>Biuro</span><span data-en>Office</span></div><div class="cinfo-val">ul. Rzymowskiego 30, lok. 424<br>02-697 Warszawa</div></div></div>
         <div class="cinfo-row"><div class="cinfo-ic">◷</div><div><div class="cinfo-lbl"><span data-pl>Godziny</span><span data-en>Hours</span></div><div class="cinfo-val"><span data-pl>Pon–Pt: 9:00–18:00</span><span data-en>Mon–Fri: 9:00–18:00</span></div></div></div>
       </div>
@@ -1196,13 +1196,21 @@ body.en [data-en]{display:revert;}
       <div class="cfg"><label>Email</label><input type="email" id="cf-email" placeholder="jan@firma.pl"></div>
       <div class="cfg">
         <label><span data-pl>Temat</span><span data-en>Subject</span></label>
-        <select id="cf-topic">
-          <option data-pl>Inwestycja / Współpraca kapitałowa</option><option data-en>Investment / Capital cooperation</option>
-          <option data-pl>Kupno nieruchomości</option><option data-en>Property purchase</option>
-          <option data-pl>Sprzedaż nieruchomości</option><option data-en>Property sale</option>
-          <option data-pl>Zapytanie o Ojrzanów (wille)</option><option data-en>Enquiry about Ojrzanów (villas)</option>
-          <option data-pl>Zapytanie o Czarny Las (działki)</option><option data-en>Enquiry about Czarny Las (plots)</option>
-          <option data-pl>Inne zapytanie</option><option data-en>Other enquiry</option>
+        <select id="cf-topic" data-pl>
+          <option>Inwestycja / Współpraca kapitałowa</option>
+          <option>Kupno nieruchomości</option>
+          <option>Sprzedaż nieruchomości</option>
+          <option>Zapytanie o Ojrzanów (wille)</option>
+          <option>Zapytanie o Czarny Las (działki)</option>
+          <option>Inne zapytanie</option>
+        </select>
+        <select id="cf-topic-en" data-en>
+          <option>Investment / Capital cooperation</option>
+          <option>Property purchase</option>
+          <option>Property sale</option>
+          <option>Enquiry about Ojrzanów (villas)</option>
+          <option>Enquiry about Czarny Las (plots)</option>
+          <option>Other enquiry</option>
         </select>
       </div>
       <div class="cfg"><label><span data-pl>Wiadomość</span><span data-en>Message</span></label><textarea rows="4" id="cf-msg" placeholder="..."></textarea></div>
@@ -1284,7 +1292,7 @@ body.en [data-en]{display:revert;}
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 /* ══════════════════════════════════
    EMAILJS — INIT
    ZAMIEŃ 'YOUR_PUBLIC_KEY' na klucz z konta EmailJS
@@ -1525,7 +1533,7 @@ function submitContact(){
   try{
     emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE_CONTACT,{
       from_name:name, phone:tel||'—', email, message:msg||'—',
-      topic: document.getElementById('cf-topic').value,
+      topic: (isEn ? document.getElementById('cf-topic-en') : document.getElementById('cf-topic')).value,
       language: isEn?'EN':'PL'
     }).then(()=>{
       btn.textContent=isEn?'Sent ✓':'Wysłano ✓';
@@ -1624,9 +1632,8 @@ function rejectCookies(){document.getElementById('cookie-bar').style.display='no
 })();
 
 /* ══════════════════════════════════
-   CHATBOT INIT
+   CHATBOT INIT — (handled in toggleChat / inline)
 ══════════════════════════════════ */
-document.getElementById('chat-time').textContent=new Date().toLocaleTimeString('pl-PL',{hour:'2-digit',minute:'2-digit'});
 
 </script>
 </body>
