@@ -1618,4 +1618,16 @@ function qsend(t){document.getElementById('cinput').value=t;sendMsg();}
    COOKIE CONSENT
 ══════════════════════════════════ */
 function acceptCookies(){document.getElementById('cookie-bar').style.display='none';localStorage.setItem('i8-cookies','accepted');}
-function rejectCookies(){document.getElementBy
+function rejectCookies(){document.getElementById('cookie-bar').style.display='none';localStorage.setItem('i8-cookies','rejected');}
+(function(){
+  if(localStorage.getItem('i8-cookies')) document.getElementById('cookie-bar').style.display='none';
+})();
+
+/* ══════════════════════════════════
+   CHATBOT INIT
+══════════════════════════════════ */
+document.getElementById('chat-time').textContent=new Date().toLocaleTimeString('pl-PL',{hour:'2-digit',minute:'2-digit'});
+
+</script>
+</body>
+</html>
