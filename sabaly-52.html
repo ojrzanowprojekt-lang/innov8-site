@@ -78,7 +78,7 @@ a{text-decoration:none;}
 button{font-family:var(--sans);cursor:pointer;}
 [data-en]{display:none!important;}
 body.en [data-pl]{display:none!important;}
-body.en [data-en]{display:revert!important;}
+body.en [data-en]{display:inline!important;}
 
 .tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--gold);margin-bottom:16px;}
 .tag::before{content:'';width:20px;height:1.5px;background:var(--gold);flex-shrink:0;}
@@ -699,6 +699,7 @@ function setLang(l){
     if(el) el.classList.toggle('active',id.includes(l));
   });
   localStorage.setItem('i8-lang',l);
+  renderUnits();
 }
 (function(){ const l=localStorage.getItem('i8-lang'); if(l) setLang(l); })();
 
@@ -776,21 +777,7 @@ function renderUnits(filter='all'){
 function filterUnits(filter,btn){
   document.querySelectorAll('.uf').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  const rows=document.querySelectorAll('#unit-tbody tr');
-  let visible=0;
-  rows.forEach(row=>{
-    const m2=parseFloat(row.cells[1].textContent);
-    const status=row.querySelector('.status-badge');
-    const isAvail=status&&status.classList.contains('s-avail');
-    let show=true;
-    if(filter==='avail') show=isAvail;
-    else if(filter==='small') show=m2<=20;
-    else if(filter==='medium') show=m2>20&&m2<=30;
-    else if(filter==='large') show=m2>30;
-    row.style.display=show?'':'none';
-    if(show) visible++;
-  });
-  document.getElementById('sum-avail').textContent=visible;
+  renderUnits(filter);
 }
 
 /* init sum */
